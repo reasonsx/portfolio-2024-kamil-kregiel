@@ -155,8 +155,8 @@ a {
     justify-content: center;
 }
 a.active {
-    background-color: var(--tertiary-color);
-    color: var(--white-color);
+    background-color: var(--white-color);
+    color: var(--black-color);
     border-radius: 16px;
     transition: all 0.5s ease;
 }

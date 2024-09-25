@@ -146,7 +146,7 @@ const filteredPortfolioItems = computed(() => {
   --gray-color: #313131;
   --main-color: #1B2B1C;
   --secondary-color: #DEFE10;
-  --tertiary-color: #440dba;
+  --tertiary-color: #6A1B9A;
   --main-border-radius: 32px;
   --font-weight: 700;
   --default-font-size: 32px;
@@ -366,10 +366,11 @@ nav a {
 }
 
 a.active {
-  background-color: var(--tertiary-color);
-  color: var(--white-color);
+  background-color: var(--white-color);
+  color: var(--black-color);
   border-radius: 16px;
   transition: all 0.5s ease;
+  font-weight: 600;
 }
 
 
@@ -464,6 +465,7 @@ a.active {
   @media screen and (max-width: 768px) {
     grid-template-columns: 116px 116px 116px;
     grid-template-rows: 116px 116px 116px 116px;
+    grid-gap: 14px;
 
     img {
       width: 116px;
