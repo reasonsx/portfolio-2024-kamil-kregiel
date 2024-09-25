@@ -31,10 +31,10 @@ const filteredPortfolioItems = computed(() => {
 </svg>
 </div>
 
-  <section id="home">
+  <section id="home" class="home-section">
     <!-- <div class="about_section"> -->
       <div class="about_background">
-        <h2>Hey there! <br>I'm Kamil Kregiel and I'm a multimedia designer :)</h2>
+        <!-- <h2>Hey there! <br>I'm Kamil Kregiel and I'm a multimedia designer :)</h2> -->
       </div>
 
     <!-- </div> -->
@@ -52,6 +52,20 @@ const filteredPortfolioItems = computed(() => {
     </div>
   </section> -->
   <section id="projects">
+    <div class="new-projects-background">
+
+      <!-- <div class="new-projects-container">
+        <div class="text-box">
+          <h3>Projects</h3>
+          <p>Here are some of my latest projects. Click on the button to view more details.</p>
+          <select v-model="selectedCategory">
+            <option value="">All</option>
+            <option value="web">Web</option>
+            <option value="app">App</option>
+            <option value="design">Design</option>
+          </select>
+        </div>
+      </div> -->
 <div v-for="portfolioItem in filteredPortfolioItems" :key="portfolioItem" class="new-projects-background">
   <div class="new-projects-container">
     <div class="text-box">
@@ -63,6 +77,7 @@ const filteredPortfolioItems = computed(() => {
     
     <div class="new-projects-box"><img :src="portfolioItem.image" alt="">
     </div>
+</div>
 </div>
 </div>
 </section>
@@ -150,15 +165,36 @@ const filteredPortfolioItems = computed(() => {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.home-section {
+  height: 1000px;
+}
+.new-projects-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background-color: var(--secondary-color);
+  height: 100%;
+  width: 1288px;
+  border-radius: 48px;
+  padding: 32px 0;
 
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    /* border-radius: 64px 64px 0 0; */
+    padding-bottom: 16px;
+    padding-top: 32px;
+  }
+}
 .new-projects-container {
   display: flex;
   flex-direction: flex;
   align-self: center;
-  background-color: var(--secondary-color);
+  background-color: #151a20;
   height: 474px;
   width: 1160px;
-  border-radius: 48px;
+  border-radius: 32px;
   box-sizing: border-box;
   padding: 16px;
 
@@ -174,11 +210,11 @@ const filteredPortfolioItems = computed(() => {
 }
 .new-projects-container h3 {
   font-size: 48px;
-  color: var(--main-color);
+  color: var(--white-color);
   font-weight: 700;
   margin: 0;
   padding: 0;
-  margin-left: 16px;
+  /* margin-left: 16px; */
   @media screen and (max-width: 768px){
     font-size: 32px;
     
@@ -190,6 +226,24 @@ const filteredPortfolioItems = computed(() => {
   flex-direction: column;     /* Stack children vertically */
   justify-content: space-between; /* Space elements vertically */
   height: 100%;              /* Make it take full height */
+  @media screen and (max-width: 768px){
+    width: 376px;
+    
+  }
+}
+.text-box p {
+  font-size: 20px;
+  color: var(--white-color);
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  width: 556px;
+   @media screen and (max-width: 768px){
+    font-size: 16px;
+    width: 376px;
+    
+  }
+  
 }
 .new-projects-box:hover {
   scale: 0.97;
@@ -202,7 +256,7 @@ const filteredPortfolioItems = computed(() => {
 }
 .text-box h5 {
   font-size: 20px;
-  margin: 0 0 0 16px;
+  margin: 0;
 }
 .text-box button {
   width: 180px;
@@ -223,24 +277,12 @@ const filteredPortfolioItems = computed(() => {
     
   }
 }
-.text-box p {
-  font-size: 20px;
-  color: var(--main-color);
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  margin-left: 16px;
-   @media screen and (max-width: 768px){
-    font-size: 16px;
-    
-  }
-  
-}
+
 .new-projects-box {
-  width: 670px;
+  width: 556px;
   height: 442px;
   background-color: var(--main-color);
-  border-radius: 32px;
+  border-radius: 24px;
   margin-left: auto;
   @media screen and (max-width: 768px) {
     width: 376px;
@@ -251,9 +293,9 @@ const filteredPortfolioItems = computed(() => {
   }
 }
 .new-projects-box img {
-  width: 670px;
-  height: 442px;
-  border-radius: 32px;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
   object-fit: cover;
   @media screen and (max-width: 768px) {
     width: 376px;
@@ -673,7 +715,11 @@ a.active {
   margin-left: 32px;
   height: 24px;
   justify-content: left;
-  align-items: last normal;
+  align-items: normal;
+  @media screen and (max-width: 768px){
+    width: 300px;
+    
+  }
 }
 .contact_section {
   display: flex;
@@ -681,14 +727,15 @@ a.active {
   justify-content: center;
   align-self: center;
   background-color: var(--secondary-color);
-  height: 806px;
-  width: 1352px;
-  border-radius: 64px;
+  height: 100%;
+  width: 1288px;
+  border-radius: 48px 48px 0 0;
+  padding-top: 32px;
 
   @media screen and (max-width: 768px) {
     width: 100%;
     height: auto;
-    border-radius: 64px 64px 0 0;
+    /* border-radius: 64px 64px 0 0; */
     padding-bottom: 16px;
     padding-top: 32px;
   }
@@ -772,12 +819,14 @@ a.active {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border-radius: 24px; */
 
   @media screen and (max-width: 768px) {
     grid-row-start: 4;
     grid-row-end: 5;
     grid-column-start: 1;
     grid-column-end: 3;
+    border-radius: 24px;
   }
 }
 
@@ -839,8 +888,11 @@ footer {
   justify-content: center;
   align-items: center;
   height: 64px;
-  width: 1352px;
+  width: 1288px;
+  padding-top: 32px;
+  background-color: var(--secondary-color);
   @media screen and (max-width: 768px) {
+    padding-top: 0;
     width: 100%;
     background-color: var(--secondary-color);
   }
@@ -849,7 +901,8 @@ footer {
 .footer_container p {
   font-size: 16px;
   font-weight: 400;
-  color: var(--secondary-color);
+  color: var(--main-color);
+  font-weight: 500;
   @media screen and (max-width: 768px) {
     color: var(--main-color);
     font-weight: 500;
