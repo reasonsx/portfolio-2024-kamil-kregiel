@@ -85,9 +85,9 @@ const filteredPortfolioItems = computed(() => {
         <div class="contact_container">
           <div class="left_contact_box">
             <h3>Phone</h3>
-            <p>+45 91 95 09 40</p>
+            <a href="tel:+4591950940">+45 91 95 09 40</a>
             <h3>Email</h3>
-            <p>kamkre01@easv365.dk</p>
+            <a href="mailto:kamkre01@easv365.dk">kamkre01@easv365.dk</a>
             <h3>Address</h3>
             <p>Esbjerg 6700, Denmark</p>
           </div>
@@ -122,13 +122,13 @@ const filteredPortfolioItems = computed(() => {
             </a>
           </div>
           <div class="cv_box">
-            <a href="../assets/pdf/CV FINAL Kamil Kregiel.pdf" download="">
+            <a href="../assets/pdf/CV-Kamil-Kregiel.pdf" download="CV-Kamil-Kregiel.pdf">
               <h3>CV</h3>
             </a>
           </div>
-          <div class="video_cv_box"><a href="https://youtu.be/98PtQOIum_A" target="_blank">
-              <h3>VIDEO CV</h3>
-            </a></div>
+          <!-- <div class="video_cv_box"><a href="https://youtu.be/98PtQOIum_A" target="_blank"> -->
+              <!-- <h3>VIDEO CV</h3> -->
+            <!-- </a></div> -->
         </div>
       </div>
     </div>
@@ -354,7 +354,7 @@ li:not(:hover) {
   transition: all 0.4s ease-out;
 }
 
-a {
+nav a {
   display: flex;
   width: 100%;
   height: 100%;
@@ -508,6 +508,7 @@ a.active {
   background-color: var(--secondary-color);
   border-radius: 3rem;
   padding: 32px;
+  width: 1;
 }
 .left_contact_box h3 {
   font-size: 48px;
@@ -524,7 +525,17 @@ a.active {
   font-weight: 400;
   margin: 0;
   margin-left: 32px;
-  /* margin-top: 16px; */
+  height: 24px;
+}
+.left_contact_box a {
+  font-size: 24px;
+  color: var(--secondary-color);
+  font-weight: 400;
+  margin: 0;
+  margin-left: 32px;
+  height: 24px;
+  justify-content: left;
+  align-items: last normal;
 }
 .contact_section {
   display: flex;
@@ -541,6 +552,7 @@ a.active {
     height: auto;
     border-radius: 64px 64px 0 0;
     padding-bottom: 16px;
+    padding-top: 32px;
   }
 }
 
@@ -562,7 +574,7 @@ a.active {
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 180px 180px;
-    grid-template-rows: 180px 116px 180px 116px;
+    grid-template-rows: 180px 240px 180px 116px;
   }
 }
 
@@ -616,7 +628,7 @@ a.active {
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column-end: 5;
   background-color: var(--main-color);
   border-radius: var(--main-border-radius);
   display: flex;
@@ -627,7 +639,7 @@ a.active {
     grid-row-start: 4;
     grid-row-end: 5;
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 3;
   }
 }
 
@@ -690,10 +702,9 @@ footer {
   align-items: center;
   height: 64px;
   width: 1352px;
-
   @media screen and (max-width: 768px) {
     width: 100%;
-
+    background-color: var(--secondary-color);
   }
 }
 
@@ -701,5 +712,10 @@ footer {
   font-size: 16px;
   font-weight: 400;
   color: var(--secondary-color);
+  @media screen and (max-width: 768px) {
+    color: var(--main-color);
+    font-weight: 500;
+    
+  }
 }
 </style>
