@@ -42,7 +42,7 @@ const filteredPortfolioItems = computed(() => {
 <div class="empty-div">
   
 </div>
-  <section id="projects">
+  <!-- <section id="projects">
   <div v-for="portfolioItem in filteredPortfolioItems" :key="portfolioItem" class="card">
       
       <div class="img_background"><img :src="portfolioItem.image" alt=""></div>
@@ -50,9 +50,22 @@ const filteredPortfolioItems = computed(() => {
       <p>{{ portfolioItem.description }}</p>
       <button class="download_button"><a :href="portfolioItem.link" target="_blank"><p>View</p></a></button>
     </div>
-  </section>
-
-
+  </section> -->
+  <section id="projects">
+<div v-for="portfolioItem in filteredPortfolioItems" :key="portfolioItem" class="new-projects-background">
+  <div class="new-projects-container">
+    <div class="text-box">
+      <h3>{{ portfolioItem.title }}</h3>
+      <h5>{{ portfolioItem.date }}</h5>
+    <p>{{ portfolioItem.description }}</p>
+   <!-- <button>View</button>  -->
+  </div>
+    
+    <div class="new-projects-box"><img :src="portfolioItem.image" alt="">
+    </div>
+</div>
+</div>
+</section>
 
   
   <section id="services">
@@ -137,6 +150,129 @@ const filteredPortfolioItems = computed(() => {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.new-projects-container {
+  display: flex;
+  flex-direction: flex;
+  align-self: center;
+  background-color: var(--secondary-color);
+  height: 474px;
+  width: 1160px;
+  border-radius: 48px;
+  box-sizing: border-box;
+  padding: 16px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 64px 64px 0 0;
+    padding-bottom: 16px;
+    padding-top: 32px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.new-projects-container h3 {
+  font-size: 48px;
+  color: var(--main-color);
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  margin-left: 16px;
+  @media screen and (max-width: 768px){
+    font-size: 32px;
+    
+  }
+}
+.text-box {
+  width: 458px;
+  display: flex;              /* Make it a flex container */
+  flex-direction: column;     /* Stack children vertically */
+  justify-content: space-between; /* Space elements vertically */
+  height: 100%;              /* Make it take full height */
+}
+.new-projects-box:hover {
+  scale: 0.97;
+  transition: all 0.3s ease;
+}
+
+.new-projects-box:not(:hover) {
+  scale: 1.0;
+  transition: all 0.3s ease-out;
+}
+.text-box h5 {
+  font-size: 20px;
+  margin: 0 0 0 16px;
+}
+.text-box button {
+  width: 180px;
+  height: 64px;
+  background-color: var(--main-color);
+  border-radius: 32px;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: var(--main-font);
+  margin-top: auto;         /* Push the button to the bottom */
+  /* align-self: center; */
+  @media screen and (max-width: 768px){
+    align-self: center;
+    height: 48px;
+    
+  }
+}
+.text-box p {
+  font-size: 20px;
+  color: var(--main-color);
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  margin-left: 16px;
+   @media screen and (max-width: 768px){
+    font-size: 16px;
+    
+  }
+  
+}
+.new-projects-box {
+  width: 670px;
+  height: 442px;
+  background-color: var(--main-color);
+  border-radius: 32px;
+  margin-left: auto;
+  @media screen and (max-width: 768px) {
+    width: 376px;
+    height: 240px;
+    border-radius: 32px;
+    margin-left: 0;
+    
+  }
+}
+.new-projects-box img {
+  width: 670px;
+  height: 442px;
+  border-radius: 32px;
+  object-fit: cover;
+  @media screen and (max-width: 768px) {
+    width: 376px;
+    height: 240px;
+    border-radius: 32px;
+    object-fit: cover;
+    
+  }
+}
+.new-projects-background {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.new-projects-background h2 {
+  color: var(--main-color);
+}
+
 
 
 :root {
